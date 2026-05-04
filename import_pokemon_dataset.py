@@ -15,6 +15,7 @@ GROUP_PRICES_URL = "https://tcgcsv.com/tcgplayer/3/{group_id}/prices"
 DEFAULT_OUTPUT_PATH = (
     Path(__file__).resolve().parent / "data" / "pokemon_card_price_dataset.csv"
 )
+ENERGY_SYMBOL_PATTERN = re.compile(r"\[([A-Z]+)\]")
 
 
 def build_session() -> requests.Session:
@@ -67,8 +68,8 @@ def count_attack_fields(card_data: dict[str, str]) -> tuple[int, float]:
 
     energy_lengths: list[float] = []
     for value in attack_values:
-        match = re.match(r"\[([A-Z]+)\]", value.strip())
-        energy_lengths.append(float(len(match.group(1))) if match else 0.0)
+        symbols = ENERGY_SYMBOL_PATTERN.findall(value.strip())
+        energy_lengths.append(float(sum(len(symbol) for symbol in symbols)))
     return len(attack_values), float(sum(energy_lengths) / len(energy_lengths))
 
 
