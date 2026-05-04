@@ -1,13 +1,4 @@
-#!/usr/bin/env python3
-"""Build the CS210 Pokemon card pricing dataset from public TCGCSV endpoints.
-
-This importer matches the proposal's core need: a tabular dataset with one row
-per Pokemon card and finish type, including card attributes plus current market
-price. It uses TCGCSV's public Pokemon category export, which mirrors
-TCGplayer-backed set/product/price data without requiring private API access.
-"""
-
-from __future__ import annotations
+"""Build the Pokemon card pricing dataset from public TCGCSV endpoints."""
 
 import re
 import time
