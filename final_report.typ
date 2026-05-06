@@ -20,7 +20,7 @@
   #text(size: 18pt, weight: "bold")[Predicting Pokemon Card Prices from Card Attributes]
 
   #v(0.35em)
-  #link("https://github.com/wekantakabotdis/CS210-Project")[GitHub Repo Link] | Video Link
+  #link("https://github.com/wekantakabotdis/CS210-Project")[GitHub Repo Link] | #link("https://www.youtube.com/watch?v=nqaNiRvoFl0")[Video Link]
 
   #v(0.35em)
   CS 210: Data Management for Data Science
